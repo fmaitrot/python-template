@@ -1,0 +1,25 @@
+# included templates
+include:
+  # Python template
+  - project: "to-be-continuous/python"
+    ref: "6.6"
+    file: "templates/gitlab-ci-python.yml"
+
+# variables
+variables:
+  PYLINT_ENABLED: "true"
+  PYTEST_ENABLED: "true"
+  BANDIT_ENABLED: "true"
+
+# your pipeline stages
+stages:
+  - build
+  - test
+  - package-build
+  - package-test
+  - infra
+  - deploy
+  - acceptance
+  - publish
+  - infra-prod
+  - production
